@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - Agricultural Market</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="c:\Users\apmut\OneDrive\Documents\agri1.jpeg" alt="Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="buy and sell.html">Sell</a>
+       <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About Us</a>
+     
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search products..." />
+      <button onclick="searchProduct()">Search</button>
+    </div>
+  </nav>
+
+  <!-- Cart Section -->
+  <section class="cart">
+    <h1>Your Shopping Cart</h1>
+
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items">
+        <tr>
+          <td><img src="c:\Users\apmut\OneDrive\Documents\download.jpeg" alt="Tomatoes" /></td>
+          <td>Fresh Tomatoes</td>
+          <td><input type="number" value="2" min="1" /></td>
+          <td>$2.50</td>
+          <td>$5.00</td>
+          <td><button class="remove-btn">X</button></td>
+        </tr>
+        <tr>
+          <td><img src="c:\Users\apmut\OneDrive\Documents\wheat.jpeg" alt="Rice" /></td>
+          <td>Basmati Rice</td>
+          <td><input type="number" value="1" min="1" /></td>
+          <td>$3.00</td>
+          <td>$3.00</td>
+          <td><button class="remove-btn">X</button></td>
+        </tr>
+        <tr>
+          <td><img src="c:\Users\apmut\OneDrive\Documents\wheat.jpeg" alt="Bananas" /></td>
+          <td>Bananas</td>
+          <td><input type="number" value="1" min="1" /></td>
+          <td>$1.60</td>
+          <td>$1.60</td>
+          <td><button class="remove-btn">X</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <h3>Total: <span id="cart-total">$9.60</span></h3>
+      <button class="checkout-btn"  onclick="proceedToCheckout()">Proceed to Checkout</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Agricultural Market. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+
+  <script>
+  window.onload = loadCart;
+  function proceedToCheckout() {
+      alert("Thank you for your purchase! Your order has been placed.");
+      localStorage.removeItem('cart');
+      window.location.reload();
+    }
+</script>
+
+</body>
+</html>
+

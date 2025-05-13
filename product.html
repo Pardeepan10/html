@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products - Agricultural Market</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="c:\Users\apmut\OneDrive\Documents\agri1.jpeg" alt="Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="buy and sell.html">Sell</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About Us</a>
+      
+    </div>
+    <div class="search-bar">
+      <input type="text" id="search" placeholder="Search products..." />
+      <button onclick="searchProduct()">Search</button>
+    </div>
+  </nav>
+
+
+  <!-- Product Section -->
+  <section>
+    <h1>Our Products</h1>
+    <div class="product-grid">
+      
+      <!-- Product Cards -->
+      <div class="product-card">
+        <img src="c:\Users\apmut\OneDrive\Documents\download.jpeg" alt="Tomatoes">
+        <h3>Fresh Tomatoes</h3>
+        <p>$2.50 / kg</p>
+        <button onclick="addToCart('Fresh Tomatoes', 2.5, 'https://via.placeholder.com/150x150.png?text=Tomatoes')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="c:\Users\apmut\OneDrive\Documents\wheat.jpeg" alt="Wheat">
+        <h3>Organic Wheat</h3>
+        <p>$1.80 / kg</p>
+        <button onclick="addToCart('Organic Wheat', 1.8, 'https://via.placeholder.com/150x150.png?text=Wheat')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="c:\Users\apmut\OneDrive\Documents\pot.jpeg" alt="Potatoes">
+        <h3>Fresh Potatoes</h3>
+        <p>$1.20 / kg</p>
+        <button onclick="addToCart('Fresh Potatoes', 1.2, 'https://via.placeholder.com/150x150.png?text=Potatoes')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="c:\Users\apmut\OneDrive\Documents\bas.jpeg" alt="Rice">
+        <h3>Basmati Rice</h3>
+        <p>$3.00 / kg</p>
+        <button onclick="addToCart('Basmati Rice', 3.0, 'https://via.placeholder.com/150x150.png?text=Rice')">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="c:\Users\apmut\OneDrive\Documents\onion.jpeg" alt="Onions">
+        <h3>Red Onions</h3>
+        <p>$1.50 / kg</p>
+        <button onclick="addToCart('Red Onions', 1.5, 'https://via.placeholder.com/150x150.png?text=Onions')" >Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="c:\Users\apmut\OneDrive\Documents\milk.jpeg" alt="Milk">
+        <h3>Fresh Cow Milk</h3>
+        <p>$0.99 / litre</p>
+        <button onclick="addToCart('Fresh Cow Milk', 0.99, 'https://via.placeholder.com/150x150.png?text=Milk')">Add to Cart</button>
+      </div>
+
+   
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Agricultural Market. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
+
+

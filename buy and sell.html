@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell - Agricultural Market</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="c:\Users\apmut\OneDrive\Documents\agri1.jpeg" alt="Logo" />
+    </div>
+    <div class="nav-links">
+      <a href="home.html">Home</a>
+      <a href="product.html">Products</a>
+      <a href="buy and sell.html">Sell</a>
+      <a href="cart.html">Cart</a>
+      <a href="contact.html">Contact</a>
+      <a href="about.html">About Us</a>
+      
+    </div>
+  </nav>
+
+  <!-- Sell Section -->
+  <section class="sell">
+    <h1>Sell Your Agricultural Products</h1>
+    <form class="sell-form" onsubmit="submitProduct(event)">
+      <input type="text" id="sell-name" placeholder="Product Name" required />
+      <input type="number" id="sell-price" placeholder="Price" required />
+      <input type="text" id="sell-desc" placeholder="Description" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="submitted-products">
+      <h3>Your Submitted Products:</h3>
+      <ul id="product-list"></ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Agricultural Market. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script>
+    function submitProduct(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('sell-name').value;
+      const price = parseFloat(document.getElementById('sell-price').value);
+      const desc = document.getElementById('sell-desc').value;
+
+      const product = { name, price, desc };
+      const sellerProducts = JSON.parse(localStorage.getItem('sellerProducts')) || [];
+      sellerProducts.push(product);
+      localStorage.setItem('sellerProducts', JSON.stringify(sellerProducts));
+
+      alert('Product submitted for selling!');
+      document.querySelector('.sell-form').reset();
+      loadSubmittedProducts();
+    }
+
+    function loadSubmittedProducts() {
+      const products = JSON.parse(localStorage.getItem('sellerProducts')) || [];
+      const list = document.getElementById('product-list');
+      if (!list) return;
+      list.innerHTML = '';
+
+      products.forEach(p => {
+        const li = document.createElement('li');
+        li.textContent = `${p.name} - $${p.price.toFixed(2)}: ${p.desc}`;
+        list.appendChild(li);
+      });
+    }
+
+    window.onload = loadSubmittedProducts;
+  </script>
+</body>
+</html>
